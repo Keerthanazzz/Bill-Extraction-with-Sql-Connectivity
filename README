@@ -1,0 +1,29 @@
+This project requires a database to store the invoice data extracted from the uploaded PDFs. The SQLite database is used in this project for simplicity and ease of use. You can set up the database and interact with it using Python and the sqlite3 library, or any SQL client that supports SQLite.
+
+Prerequisites
+Before you start, ensure you have the following installed:
+
+Python (3.6 or higher)
+SQLite (SQLite3 library or SQLite database file)
+Required Libraries:
+sqlite3 (for Python database interaction)
+Any other libraries for PDF extraction or other project needs
+Database Schema
+The database consists of three main tables:
+
+1. invoices
+This table stores the general information for each invoice.
+
+sql
+
+CREATE TABLE IF NOT EXISTS invoices (
+    invoice_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    invoice_number TEXT NOT NULL,
+    invoice_date TEXT NOT NULL,
+    customer_name TEXT,
+    customer_address TEXT,
+    gst_number TEXT,
+    total_amount REAL,
+    total_tax_amount REAL,
+    grand_total REAL
+);
